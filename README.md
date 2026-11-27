@@ -2,6 +2,10 @@
 
 Aplicação local para gerenciar filmes e séries. O backend usa FastAPI, Prisma Client Python e PostgreSQL no NeonDB.
 
+## Complementar
+
+Este readme é um complementar do [Frontend](./web/README.md)
+
 ## Pré-requisitos
 
 - Windows e CMD.
@@ -97,6 +101,16 @@ https://seu-projeto.vercel.app/api/filmes/listar
 ```
 
 Não é necessário criar `vercel.json` para redirecionar as rotas.
+
+## Usar a interface web
+
+Com o backend publicado, abra o terminal na pasta raiz do projeto e inicie um servidor local para os arquivos da interface:
+
+```cmd
+python -m http.server 5500
+```
+
+Acesse `http://localhost:5500`. A interface em `web/filmes.html` usa a API publicada em `https://cinelist-backend.vercel.app` para listar, cadastrar, editar e excluir filmes e séries. O uso da porta `5500` corresponde às origens locais permitidas pelo CORS do backend.
 
 ## License
 
