@@ -23,7 +23,7 @@ python -m http.server 5500
 
 Abra `http://localhost:5500` no navegador. A página inicial redireciona para `web/filmes.html`.
 
-Mantenha a janela do CMD aberta enquanto usar a interface. A porta `5500` está entre as origens locais permitidas pelo CORS do backend.
+Mantenha a janela do CMD aberta enquanto usar a interface. A porta `5500` está entre as origens locais permitidas pelo CORS do backend. A origem `https://zenvexy.github.io` também está permitida para o GitHub Pages.
 
 ## Usar a interface
 

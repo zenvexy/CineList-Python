@@ -66,6 +66,20 @@ class APITest(unittest.TestCase):
         self.assertEqual(resposta.status_code, 200)
         self.assertEqual(resposta.json()["mensagem"], "CineList API online")
 
+    def test_cors_para_github_pages(self):
+        origem = "https://zenvexy.github.io"
+        resposta = self.client.options(
+            "/api/filmes/cadastrar",
+            headers={
+                "Origin": origem,
+                "Access-Control-Request-Method": "POST",
+                "Access-Control-Request-Headers": "content-type",
+            },
+        )
+
+        self.assertEqual(resposta.status_code, 200)
+        self.assertEqual(resposta.headers["access-control-allow-origin"], origem)
+
     def test_crud_filmes_e_nao_encontrado(self):
         filme = {
             "titulo": "Filme de teste",
