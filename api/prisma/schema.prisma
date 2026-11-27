@@ -1,0 +1,33 @@
+
+generator client {
+  provider = "prisma-client-py"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Filme {
+  id          Int         @id @default(autoincrement())
+  titulo      String
+  descricao   String?
+  tipo        TipoFilme
+  genero      String
+  nota        Float?
+  imagem      String
+  status      StatusFilme @default(PENDENTE)
+  ano         Int
+  criadoEm    DateTime    @default(now())
+}
+
+enum TipoFilme {
+  FILME
+  SERIE
+}
+
+enum StatusFilme {
+  PENDENTE
+  ASSISTIDO
+  ASSISTINDO
+}

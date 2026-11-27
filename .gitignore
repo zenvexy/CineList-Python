@@ -1,0 +1,7 @@
+.env
+.venv/
+.prisma-cache/
+.npm-cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
