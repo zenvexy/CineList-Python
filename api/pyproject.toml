@@ -1,2 +1,12 @@
+[project]
+name = "cinelist-api"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]==0.161.1",
+    "prisma==0.15.0",
+    "python-dotenv==1.2.4",
+]
+
 [tool.vercel.scripts]
 build = "python build.py"
