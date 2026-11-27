@@ -31,5 +31,14 @@ app.add_middleware(
     allow_headers=["Content-Type"],
 )
 
+
+@app.get("/", tags=["Status"])
+async def inicio():
+    return {
+        "mensagem": "CineList API online",
+        "documentacao": "/docs",
+    }
+
+
 app.include_router(filmes_router, prefix="/api")
 app.include_router(enums_router, prefix="/api")

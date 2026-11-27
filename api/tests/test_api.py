@@ -60,6 +60,12 @@ class APITest(unittest.TestCase):
         database.filme = FilmeRepositoryFake()
         self.client = TestClient(app)
 
+    def test_rota_inicial(self):
+        resposta = self.client.get("/")
+
+        self.assertEqual(resposta.status_code, 200)
+        self.assertEqual(resposta.json()["mensagem"], "CineList API online")
+
     def test_crud_filmes_e_nao_encontrado(self):
         filme = {
             "titulo": "Filme de teste",
